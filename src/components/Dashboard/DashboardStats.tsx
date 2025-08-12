@@ -1,6 +1,7 @@
 import React from 'react';
 import { CheckSquare, Clock, TrendingUp, AlertCircle } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
+
 import { formatDuration } from '../../utils/dateUtils';
 
 const DashboardStats: React.FC = () => {
