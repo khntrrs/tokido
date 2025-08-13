@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LogIn, User, Mail, Lock } from 'lucide-react';
+import { User, Mail, Lock } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { mockUsers, generateMockTasks, generateMockTimeLogs, generateMockNotifications } from '../../utils/mockData';
 
@@ -49,11 +49,27 @@ const LoginForm: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-emerald-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-8 border border-gray-100">
+    <div className="relative min-h-screen flex items-center justify-center p-4 overflow-hidden">
+      {/* Background GIF */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="src\\assets\\bg.gif"
+          alt="Background animation"
+          className="w-full h-full object-cover"
+        />
+      </div>
+      {/* Form container */}
+      <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-8 border border-gray-100 z-10">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-2xl mb-4">
+          {/* <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-2xl mb-4">
             <LogIn className="w-8 h-8 text-white" />
+          </div> */}
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4">
+            <img
+              src="https://i.ibb.co/j9v9VGGs/logo-Tokido.png" 
+              alt="App Logo"
+              className="w-20 h-20 object-contain"
+            />
           </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Welcome to Tokido</h1>
           <p className="text-gray-600">Project management made simple</p>
@@ -142,7 +158,7 @@ const LoginForm: React.FC = () => {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+            className="w-full bg-yellow-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 transition-colors"
           >
             {isSignUp ? 'Create Account' : 'Sign In'}
           </button>
@@ -151,7 +167,7 @@ const LoginForm: React.FC = () => {
         <div className="mt-6 text-center">
           <button
             onClick={() => setIsSignUp(!isSignUp)}
-            className="text-blue-600 hover:text-blue-700 font-medium"
+            className="text-yellow-800 hover:text-blue-700 font-medium"
           >
             {isSignUp 
               ? 'Already have an account? Sign in' 

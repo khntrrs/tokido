@@ -1,7 +1,7 @@
 import React from 'react';
-import { Clock, CheckSquare, PlayCircle, PauseCircle } from 'lucide-react';
+import { Clock, CheckSquare} from 'lucide-react';
 import { useApp } from '../../context/AppContext';
-import { formatDateTime, formatTime } from '../../utils/dateUtils';
+import { formatDateTime} from '../../utils/dateUtils';
 
 const RecentActivity: React.FC = () => {
   const { state } = useApp();
